@@ -38,4 +38,4 @@ jobs:
     with:
       push: false
       tags: ghcr.io/${{ github.repository_owner }}/ipt-netflow-exporter:latest
-      go_version: ${{ vars.GO_VERSION
+      go_version: ${{ vars.GO_VERSION }}
