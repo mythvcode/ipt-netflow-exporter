@@ -15,7 +15,6 @@ logger:
   level: info
   format: text
 exporter:
-  enable: false
   enable_runtime_metrics: true
   server_address: yaml_test_address
   server_port:    1010
