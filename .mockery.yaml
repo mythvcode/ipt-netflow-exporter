@@ -1,0 +1,6 @@
+dir: "{{.InterfaceDir}}/mocks"
+outpkg: "mocks"
+packages:
+  github.com/mythvcode/ipt-netflow-exporter/internal/exporter:
+    interfaces:
+      StatParser:
