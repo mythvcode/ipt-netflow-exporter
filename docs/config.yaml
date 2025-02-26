@@ -1,0 +1,13 @@
+---
+# yaml config                                        Environment variables
+logger:
+  file: ""                                           # EXPORTER_LOG_FILE
+  level: debug                                       # EXPORTER_LOG_LEVEL
+  format: json                                       # EXPORTER_LOG_FORMAT
+exporter:
+  server_address: localhost                          # EXPORTER_HOST
+  server_port: 8080                                  # EXPORTER_PORT
+  request_timeout: 10                                # EXPORTER_REQUEST_TIMEOUT
+  telemetry_path: /metrics                           # EXPORTER_TELEMETRY_PATH
+  ipt_netflow_stat: /proc/net/stat/ipt_netflow_snmp  # EXPORTER_IPT_NETFLOW_STAT
+  enable_runtime_metrics: false                      # EXPORTER_ENABLE_RUNTIME_METRICS
