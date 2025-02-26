@@ -1,7 +1,7 @@
 GOLANG_CI_VERSION ?= 'v1.64.4'
 
 build:
-	go build -a -installsuffix cgo -o ip-netflow-exporter ./cmd/iptnetflowexporter
+	go build -a -installsuffix cgo -o ipt-netflow-exporter ./cmd/iptnetflowexporter
 
 mocks:
 	go run github.com/vektra/mockery/v2@v2.52.3

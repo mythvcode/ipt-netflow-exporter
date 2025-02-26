@@ -1,0 +1,41 @@
+name: Test pipelines
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Go
+      uses: actions/setup-go@v4
+      with:
+        go-version: ${{ vars.GO_VERSION }}
+    - name: Test
+      run: make tests
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Go
+      uses: actions/setup-go@v4
+      with:
+        go-version: ${{ vars.GO_VERSION }}
+    - name: Install golangci-lint
+      run: |
+          curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin ${{ vars.GOLANGCI_LINT_VERSION }}
+    - name: Lint
+      run: make lint
+
+  test_build_image:
+    uses: ./.github/workflows/build.yml
+    with:
+      push: false
+      tags: ghcr.io/${{ github.repository_owner }}/ipt-netflow-exporter:latest
+      go_version: ${{ vars.GO_VERSION }}

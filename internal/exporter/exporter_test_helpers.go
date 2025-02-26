@@ -65,6 +65,8 @@ func getTestStatistic(t *testing.T) statparser.Statistics {
 }
 
 func getPromTestStat(t *testing.T) string {
+	t.Helper()
+
 	return `
 	# HELP ipt_netflow_cpu_drop_bytes Bytes in cpu_drop_packets for this cpu.
 	# TYPE ipt_netflow_cpu_drop_bytes counter

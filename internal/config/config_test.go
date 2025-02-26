@@ -81,7 +81,7 @@ func setEnvVars(t *testing.T) {
 		},
 	}
 	for _, env := range envVars {
-		require.NoError(t, os.Setenv(env.envName, env.value))
+		t.Setenv(env.envName, env.value)
 	}
 
 	t.Cleanup(func() {
