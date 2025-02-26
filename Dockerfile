@@ -11,8 +11,8 @@ RUN CGO_ENABLED=0 go build -a -installsuffix cgo -o ipt-netflow-exporter ./cmd/i
 FROM alpine:latest
 
 LABEL description="ip-netflow prometheus exporter"
-RUN addgroup --gid 39355 ipt_netflow_exporter && \
-    adduser -h /app -s /bin/sh -G ipt_netflow_exporter -u 39355 -D ipt_netflow_exporter
+RUN addgroup --gid 36555 ipt_netflow_exporter && \
+    adduser -h /app -s /bin/sh -G ipt_netflow_exporter -u 36355 -D ipt_netflow_exporter
 WORKDIR /app/
 COPY --from=gobuilder /build/ipt-netflow-exporter .
 
