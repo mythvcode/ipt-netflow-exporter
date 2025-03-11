@@ -56,7 +56,7 @@ func (s *StatCollector) parseFields(fileLines []string) (Statistics, error) {
 	resultStruct := Statistics{}
 	for _, line := range fileLines {
 		if splitLine := strings.Fields(line); len(splitLine) > 0 {
-			if err := s.processConfigLine(&resultStruct, splitLine); err != nil {
+			if err := s.parseStatLine(&resultStruct, splitLine); err != nil {
 				return resultStruct, err
 			}
 		}
@@ -65,7 +65,7 @@ func (s *StatCollector) parseFields(fileLines []string) (Statistics, error) {
 	return resultStruct, nil
 }
 
-func (s *StatCollector) processConfigLine(statStruct *Statistics, splitLine []string) error {
+func (s *StatCollector) parseStatLine(statStruct *Statistics, splitLine []string) error {
 	if isCPUStat(splitLine[0]) {
 		if res := s.parseCPUFields(splitLine); res != nil {
 			statStruct.CPUStatList = append(statStruct.CPUStatList, *res)
