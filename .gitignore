@@ -3,4 +3,4 @@
 .idea/
 
 # binary
-ip-netflow-exporter
+/ipt-netflow-exporter
