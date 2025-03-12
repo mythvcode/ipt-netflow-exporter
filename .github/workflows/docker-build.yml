@@ -15,6 +15,6 @@ jobs:
     with:
       push: true
       tags: |
-        ghcr.io/${{ github.repository_owner }}/ip-netflow-exporter:latest
-        ghcr.io/${{ github.repository_owner }}/ip-netflow-exporter:${{ github.ref_name }}
+        ghcr.io/${{ github.repository_owner }}/ipt-netflow-exporter:latest
+        ghcr.io/${{ github.repository_owner }}/ipt-netflow-exporter:${{ github.ref_name }}
       go_version: ${{ vars.GO_VERSION }}
