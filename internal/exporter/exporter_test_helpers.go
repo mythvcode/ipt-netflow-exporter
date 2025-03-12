@@ -104,9 +104,9 @@ func getPromTestStat(t *testing.T) string {
 	# HELP ipt_netflow_drop_bytes Total bytes in packets dropped by metering process.
 	# TYPE ipt_netflow_drop_bytes counter
 	ipt_netflow_drop_bytes 11
-	# HELP ipt_netflow_drop_flows Total exported flow data records.
-	# TYPE ipt_netflow_drop_flows counter
-	ipt_netflow_drop_flows 13
+	# HELP ipt_netflow_out_flows Total exported flow data records.
+	# TYPE ipt_netflow_out_flows counter
+	ipt_netflow_out_flows 13
 	# HELP ipt_netflow_drop_packets Total packets dropped by metering process.
 	# TYPE ipt_netflow_drop_packets counter
 	ipt_netflow_drop_packets 10
