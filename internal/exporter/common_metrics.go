@@ -125,7 +125,7 @@ func newCommonMetricsCollector() *CommonMetrics {
 		outFlows: prometheus.NewCounterVec(
 			prometheus.CounterOpts{
 				Namespace: metricsNamespace,
-				Name:      "drop_flows",
+				Name:      "out_flows",
 				Help:      "Total exported flow data records.",
 			}, []string{},
 		),
