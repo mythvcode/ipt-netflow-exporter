@@ -30,7 +30,7 @@ func getHandler(format string, logFile *os.File, level slog.Level) slog.Handler 
 		return slog.NewTextHandler(logFile, &slog.HandlerOptions{Level: level})
 	}
 
-	return slog.NewJSONHandler(os.Stdout, &slog.HandlerOptions{Level: level})
+	return slog.NewJSONHandler(logFile, &slog.HandlerOptions{Level: level})
 }
 
 func Init(logFile string, level string, format string) error {
